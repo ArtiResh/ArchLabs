@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta6
+kind: Config
+metadata:
+  name: lab-4
+build:
+  artifacts:
+  - image: reshetov/arch-lab-4
+    context: app
+deploy:
+  kubectl:
+    manifests:
+    - deployment.yaml
+    - ingress.yaml
+    - service.yaml
